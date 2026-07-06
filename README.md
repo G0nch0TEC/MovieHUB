@@ -1,49 +1,53 @@
-# 🎬 MovieHub - Proyecto de Aprendizaje
+# 🎬 MovieHub
 
-## Objetivo General
+## Objetivo
 
-Desarrollar una aplicación web utilizando **Java + Spring Boot + React +
-MySQL** para administrar un catálogo de películas, poniendo especial
-énfasis en el aprendizaje de React sin descuidar el backend.
+Desarrollar una aplicación web con **Spring Boot + React + MySQL** para
+consultar una cartelera de películas y simular la compra de tickets, con
+el objetivo de practicar el desarrollo Full Stack.
 
 ------------------------------------------------------------------------
 
-# Roadmap del Proyecto
+# Alcance del proyecto
 
-## Etapa 1 - Diseño y Base de Datos
+Este proyecto **no implementará autenticación**.
 
-### Objetivo
+Las compras se realizarán como invitado, solicitando únicamente la
+información necesaria del comprador:
 
-Diseñar correctamente el modelo de datos.
+-   Nombre completo
+-   DNI
+-   Correo electrónico
+-   Teléfono (opcional)
 
-### Aprender
+> En una futura versión se podrá agregar Login, Spring Security y JWT.
 
--   Modelado de datos
--   Relaciones
--   Normalización
+------------------------------------------------------------------------
+
+# Roadmap
+
+## Etapa 1 - Base de Datos
 
 ### Tablas
 
 -   Genero
 -   Pelicula
--   Actor
--   PeliculaActor
--   Usuario
--   Favorito
-
-------------------------------------------------------------------------
-
-## Etapa 2 - Backend Base
+-   Horario
+-   Ticket
 
 ### Objetivo
 
-Construir una API REST funcional.
+Diseñar el modelo relacional y las relaciones entre entidades.
 
-### Funcionalidades
+------------------------------------------------------------------------
 
--   CRUD de Películas
--   CRUD de Géneros
--   CRUD de Actores
+## Etapa 2 - Backend
+
+### CRUD
+
+-   Géneros
+-   Películas
+-   Horarios
 
 ### Aprender
 
@@ -52,265 +56,94 @@ Construir una API REST funcional.
 -   Repositories
 -   DTO
 -   Validaciones
--   JPA/Hibernate
--   Manejo de excepciones
+-   JPA / Hibernate
 
 ------------------------------------------------------------------------
 
-## Etapa 3 - Primer React
-
-### Objetivo
-
-Consumir la API desde React.
+## Etapa 3 - Frontend
 
 ### Pantallas
 
 -   Inicio
--   Lista de películas
+-   Cartelera
+-   Detalle de película
+-   Compra de ticket
+-   Confirmación de compra
+-   Consulta de tickets por DNI
 
 ### Aprender
 
 -   JSX
 -   Componentes
+-   Props
 -   useState
 -   useEffect
 -   Axios
-
-------------------------------------------------------------------------
-
-## Etapa 4 - Componentización
-
-### Objetivo
-
-Crear componentes reutilizables.
-
-### Componentes sugeridos
-
--   Navbar
--   Footer
--   MovieCard
--   SearchBar
--   Button
--   Input
--   Loading
-
-### Aprender
-
--   Props
--   Children
--   Organización del proyecto
-
-------------------------------------------------------------------------
-
-## Etapa 5 - Formularios CRUD
-
-### Objetivo
-
-Crear, editar y eliminar películas.
-
-### Aprender
-
--   Formularios controlados
--   Validaciones
--   Manejo de eventos
--   Estado de formularios
-
-------------------------------------------------------------------------
-
-## Etapa 6 - React Router
-
-### Objetivo
-
-Implementar navegación.
-
-### Rutas
-
--   /
--   /peliculas
--   /peliculas/:id
--   /peliculas/nueva
--   /peliculas/editar/:id
--   /favoritos
-
-### Aprender
-
 -   React Router
--   Parámetros
--   Navegación
 
 ------------------------------------------------------------------------
 
-## Etapa 7 - Detalle de Película
+## Etapa 4 - Compra de Ticket
 
-### Mostrar
+### Formulario
 
--   Portada
--   Título
--   Sinopsis
--   Género
--   Actores
--   Año
--   Duración
--   Calificación
+-   Nombre completo
+-   DNI
+-   Correo electrónico
+-   Teléfono (opcional)
+-   Horario
+-   Cantidad de entradas
 
-### Aprender
-
--   Consumo por ID
--   Componentes grandes
+El backend calculará el total y registrará la compra.
 
 ------------------------------------------------------------------------
 
-## Etapa 8 - Búsquedas
+## Objetivos de aprendizaje
 
-### Implementar
-
--   Buscar por nombre
--   Buscar por actor
--   Buscar por género
-
-### Aprender
-
--   Filtros
--   Consultas al backend
+-   Crear una API REST con Spring Boot.
+-   Diseñar una base de datos en MySQL.
+-   Consumir APIs desde React.
+-   Crear formularios con validaciones.
+-   Organizar componentes reutilizables.
+-   Comprender la comunicación entre frontend y backend.
 
 ------------------------------------------------------------------------
 
-## Etapa 9 - Filtros y Ordenamiento
+# Estructura del proyecto
 
-### Filtros
-
--   Género
--   Año
--   Calificación
-
-### Ordenar por
-
--   Más nuevas
--   Más antiguas
--   Mejor calificadas
-
-------------------------------------------------------------------------
-
-## Etapa 10 - Favoritos
-
-### Funcionalidades
-
--   Agregar favorito
--   Quitar favorito
--   Ver lista de favoritos
-
-------------------------------------------------------------------------
-
-## Etapa 11 - Dashboard
-
-### Mostrar
-
--   Total de películas
--   Total de géneros
--   Total de actores
--   Película mejor calificada
--   Última película agregada
-
-### Aprender
-
--   Dashboard
--   Tarjetas
--   Gráficos
-
-------------------------------------------------------------------------
-
-## Etapa 12 - Optimización de React
-
-### Aprender
-
--   Context API
--   Custom Hooks
--   useMemo
--   useCallback
-
-------------------------------------------------------------------------
-
-## Etapa 13 - Autenticación
-
-### Implementar
-
--   Login
--   Registro
--   JWT
--   Spring Security
--   Roles (Administrador y Usuario)
-
-------------------------------------------------------------------------
-
-## Etapa 14 - Pulido Final
-
-### Agregar
-
--   Responsive
--   Tema oscuro
--   Toasts
--   Confirmaciones
--   Loader
--   Paginación
-
-------------------------------------------------------------------------
-
-# Estructura del Backend
+## Backend
 
 ``` text
 moviehub-backend/
-├── config/
 ├── controller/
 ├── dto/
 ├── entity/
-├── exception/
-├── mapper/
 ├── repository/
-├── security/
 ├── service/
-│   └── impl/
-└── util/
+├── config/
+└── exception/
 ```
 
-# Estructura del Frontend
+## Frontend
 
 ``` text
 moviehub-frontend/
-├── assets/
 ├── components/
-├── context/
-├── hooks/
-├── layouts/
 ├── pages/
-├── routes/
 ├── services/
+├── routes/
+├── hooks/
+├── assets/
 └── styles/
 ```
 
-# Orden recomendado para aprender React
-
-1.  Componentes
-2.  Props
-3.  JSX
-4.  useState
-5.  useEffect
-6.  Axios
-7.  Formularios
-8.  React Router
-9.  Context API
-10. Custom Hooks
-11. useMemo
-12. useCallback
-
 ------------------------------------------------------------------------
 
-# Objetivo Final
+# Mejoras futuras
 
-Al finalizar este proyecto deberías ser capaz de:
-
--   Construir una API REST completa con Spring Boot.
--   Diseñar una base de datos relacional con MySQL.
--   Consumir APIs desde React.
--   Organizar un proyecto frontend de forma profesional.
--   Implementar autenticación con JWT.
--   Desarrollar una aplicación Full Stack lista para desplegar.
+-   Login de usuarios.
+-   Spring Security + JWT.
+-   Panel administrativo.
+-   Selección de asientos.
+-   Envío de correo de confirmación.
+-   Dashboard de estadísticas.
